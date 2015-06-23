@@ -6,15 +6,19 @@ var Vibe = require('ui/vibe');
 
 var parseFeed = function(data) {
   var items = [];
-  for(var i = 0; i < data.length; i++) {
-    if (data[i] !== null) {
-      // Add to menu items array
-      items.push({
-        title: data[i].title,
-        subtitle: data[i].summary,
-        dataindex: i,
-      });
-    }
+  for(var key in data) {
+    items.push({
+      title: data[key].title + ' ' + data[key].prio,
+      subtitle: data[key].summary,
+      datakey: key,
+      prio: data[key].prio
+    });
+  }
+  
+  items.sort(function(a,b) { return a.prio - b.prio; });
+  
+  for (var i = 0; i < items.length; i++) {
+    console.log (i + " " + items[i].title);
   }
 
   // Finally return whole array
@@ -63,12 +67,12 @@ ajax(
     resultsMenu.on('select', function(e) {
       console.log ('selected ' + JSON.stringify(e.item, null, 2));
       // Get that forecast
-      var fbitem = data[e.item.dataindex];
+      var fbitem = data[e.item.datakey];
 
       // Create the Card for detailed view
       var detailCard = new UI.Card({
         title:'Details',
-        subtitle: fbitem.title,
+        subtitle: e.item.title,
         body: fbitem.detail,
         action: {
           up: 'images/icon_start.png',
