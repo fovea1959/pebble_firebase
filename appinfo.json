@@ -31,12 +31,12 @@
             },
             {
                 "file": "images/icon_abort.png",
-                "name": "IMAGES_ICON_ABORT_PNG",
+                "name": "IMAGE_ICON_ABORT_PNG",
                 "type": "png"
             },
             {
                 "file": "images/icon_start.png",
-                "name": "IMAGES_ICON_START_PNG",
+                "name": "IMAGE_ICON_START_PNG",
                 "type": "png"
             }
         ]
