@@ -71,8 +71,8 @@ ajax(
         subtitle: fbitem.title,
         body: fbitem.detail,
         action: {
-          up: 'images/icon_start.png',
-          down: 'images/icon_abort.png'
+          up: 'IMAGE_ICON_START',
+          down: 'IMAGE_ICON_ABORT'
         }
       });
       detailCard.on('click', 'up', function() {

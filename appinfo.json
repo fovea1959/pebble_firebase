@@ -30,13 +30,13 @@
                 "type": "font"
             },
             {
-                "file": "images/icon_abort.png",
-                "name": "IMAGE_ICON_ABORT",
+                "file": "images/icon_start.png",
+                "name": "IMAGES_ICON_START_PNG",
                 "type": "png"
             },
             {
-                "file": "images/icon_start.png",
-                "name": "IMAGE_ICON_START",
+                "file": "images/icon_abort.png",
+                "name": "IMAGES_ICON_ABORT_PNG",
                 "type": "png"
             }
         ]
