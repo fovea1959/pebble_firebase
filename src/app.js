@@ -69,7 +69,7 @@ ajax(
       var detailCard = new UI.Card({
         title:'Details',
         subtitle: fbitem.title,
-        body: fbitem.content,
+        body: fbitem.detail,
         action: {
           up: 'images/icon_start.png',
           down: 'images/icon_abort.png'
@@ -93,12 +93,13 @@ ajax(
       // Make another request to openweathermap.org
       ajax(
         {
-          url:'http://api.openweathermap.org/data/2.5/forecast?q=London',
+          url:'https://amber-heat-3201.firebaseio.com/Pebble.json',
           type:'json'
         },
         function(data) {
+          console.log ('tapped: received ' + JSON.stringify(data, null, 2));
           // Create an array of Menu items
-          var newItems = parseFeed(data, 10);
+          var newItems = parseFeed(data);
           
           // Update the Menu's first section
           resultsMenu.items(0, newItems);
